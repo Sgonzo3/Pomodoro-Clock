@@ -162,17 +162,30 @@ class Timer extends React.Component {
    constructor(props) {
      super(props);
      this.state = {
-       value: 25,
+
      };
    }
+   displayTime = (time) => {
+     if(time < 10) {
+       return '0'+time;
+     } else {
+       return time;
+     }
+   }
    render(){
+     const seconds = this.props.timer % 60;
+     const minutes = Math.floor(this.props.timer / 60);
+
      return(
        <div>
          <label id="timer-label">
-           <span>Session</span>
+           <h2>Session</h2>
          </label>
-         <AppClock id="time-left"/>
-         <button id="start_stop">Play / Pause</button>
+         <h3 id="time-left">{`${this.displayTime(minutes)}:${this.displayTime(seconds)}`}</h3>
+         <button
+           id="start_stop"
+           onClick={this.props.playPause}
+           >Play / Pause</button>
          <button id="reset">Reset</button>
        </div>
      );
