@@ -130,18 +130,29 @@ class Session extends React.Component {
    constructor(props) {
      super(props);
      this.state = {
-       value: 25,
+
      };
+   }
+   handleClick = (e) => {
+     e.target.innerText === '-'
+      ? this.props.decrementTime(this.props.session, 'session')
+      : this.props.incrementTime(this.props.session, 'session')
    }
    render(){
      return(
        <div>
          <label id="session-label">
-           <span>"Session Length"</span>
+           <h2>Session Length</h2>
          </label>
-         <button id="session-decrement"></button>
-        <span id="session-length">{this.state.value}</span>
-         <button id="session-increment"></button>
+         <button
+           id="session-decrement"
+           onClick={this.handleClick}
+           >-</button>
+         <span id="session-length">{this.props.session}</span>
+         <button
+           id="session-increment"
+           onClick={this.handleClick}
+           >+</button>
        </div>
      );
    }
