@@ -67,7 +67,7 @@ class Pomodoro extends React.Component {
       start: 0,
       end: 0,
       timer: 0
-    }, () => console.log("reset"));
+    });
   }
   render() {
     return (<main>
