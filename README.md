@@ -1,3 +1,6 @@
+# Pomodoro Clock
+A Pomodoro Clock written in JavaScript with React. Completed as part of the freeCodeCamp.org Front End Certification curriculum.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
